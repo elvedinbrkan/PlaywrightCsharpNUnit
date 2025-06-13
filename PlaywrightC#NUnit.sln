@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightC#NUnit", "CrashCoursePlaywrightC#\PlaywrightC#NUnit.csproj", "{0F0D88B1-8AAF-4B28-9EB4-5374B5E041A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F0D88B1-8AAF-4B28-9EB4-5374B5E041A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0D88B1-8AAF-4B28-9EB4-5374B5E041A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0D88B1-8AAF-4B28-9EB4-5374B5E041A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0D88B1-8AAF-4B28-9EB4-5374B5E041A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {313F8F47-88E9-4F08-85D8-5DFE8331222C}
+	EndGlobalSection
+EndGlobal
