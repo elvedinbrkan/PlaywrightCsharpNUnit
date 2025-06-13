@@ -93,12 +93,6 @@ namespace CrashCoursePlaywrightC_.Tests
             await Page.GotoAsync("https://olx.ba/");
             _extentTest = _extent.CreateTest(TestContext.CurrentContext.Test.Name);
 
-            //string fileName = "appsettings.json";
-            //using FileStream openStream = File.OpenRead(fileName);
-            //Appsettings? logn = await JsonSerializer.Deserialize<Appsettings>(openStream);
-            //_settings = ConfigurationHelper.LoadSettings("C:\\Users\\ElvedinBrkan\\source\\repos\\CrashCoursePlaywrightC#\\CrashCoursePlaywrightC#\\appsettings.json");
-            //username= _settings.Credentials.Username;
-            //password= _settings.Credentials.Password;
         }
 
 
