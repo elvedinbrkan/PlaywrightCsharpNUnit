@@ -9,6 +9,7 @@ namespace CrashCoursePlaywrightC_.Pages
 {
     public class HomePage :BasePage
     {
+        public string SearchTerm; 
         public HomePage(IPage page) : base(page) { }
         private ILocator SearchBox => Page.GetByPlaceholder("Pretraga");
         private ILocator MojiOglasiBtn => Page.Locator("a[href='/mojolx/artikli/aktivni']");
@@ -18,9 +19,9 @@ namespace CrashCoursePlaywrightC_.Pages
         //Div (class) = parent
         //List items = child
         //2. use GetByRole(AriaRole.Listitem) to specify which element we are trying to select under this Locator (class)
-        //3. use .Filter(new() { HasText="audi a3"}) to filter the available listitems by specific text
+        //3. use .Filter(new() { HasText="audi a3"}) to filter the available list items by specific text
         private ILocator SearchItem => Page.Locator(".searchbar-dropdown").GetByRole(AriaRole.Listitem)
-                                              .Filter(new() { HasText="audi a3"});
+                                             .Filter(new() { HasText=SearchTerm});
         private ILocator ResultLbl => Page.Locator(".search-title");
         private ILocator NoSearchResultsLbl => Page.GetByText("Nema rezultata za traženi pojam");
         private ILocator ObjaviOglasBtn => Page.Locator("//button[text()=\"Objavi oglas\"]");
@@ -30,8 +31,9 @@ namespace CrashCoursePlaywrightC_.Pages
 
         public async Task ClickMojiOglasibtn() => await MojiOglasiBtn.ClickAsync();
 
-        public async Task selectItemFromSearchResult(string searchItem)
+        public async Task searchAndselectItemFromSearchResult(string searchItem)
         {
+            SearchTerm = searchItem;
             await SearchBox.FillAsync(searchItem);
             await SearchItem.First.ClickAsync(); //selects a first matching element from search dropdown
             //await _searchItem.ClickAsync(); //this line returns all search result values from dropdown
@@ -39,9 +41,10 @@ namespace CrashCoursePlaywrightC_.Pages
 
         public async Task<bool> IsSearchResultDisplayed() => await IsWebElementVisible(ResultLbl);
 
-        public async Task EnterSearchTerm(string searchTerm)
-        {
-            await SearchBox.FillAsync(searchTerm);
+        public async Task EnterUnexistentSearchTerm(string unexistentSearchTerm)
+        {   
+            SearchTerm= unexistentSearchTerm;
+            await SearchBox.FillAsync(unexistentSearchTerm);
             await SearchBox.PressAsync("Enter");
         }
 

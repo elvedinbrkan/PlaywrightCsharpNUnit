@@ -76,6 +76,7 @@ namespace CrashCoursePlaywrightC_.Tests
                 Headless = false,
                 Devtools = false,
                 SlowMo = 1000
+                //Channel= "msedge"
             });
 
             //browserContext

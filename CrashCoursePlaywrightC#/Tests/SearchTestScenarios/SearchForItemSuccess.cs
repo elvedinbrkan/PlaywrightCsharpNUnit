@@ -15,20 +15,25 @@ namespace CrashCoursePlaywrightC_.Tests.SearchTestScenarios
     [TestFixture]
     public class SearchSuccess : BaseTest
     {
+       
         [Test]
-        [Description("Verifying if user is able to successfully search for item")]
+        [Description("Verifying if user is able to successfully search for item using Test Parametarization")]
         [Category("Positive")]
-        public async Task SearchItemTest_Success()
+        [TestCase("audi a6")]
+        //[TestCase("audi a6")]
+        //[TestCase("iphone 15")]
+        public async Task SearchTest_Success(string SearchTerm)
         {
             LoginPage loginpage = new LoginPage(Page);
             await loginpage.ClickAcceptTermsbtn();
             Assert.That(await loginpage.IsOLXDisplayed(), Is.True, "OLX page is not displayed");
             await loginpage.ClickPrijaviSebtn();
             HomePage homePage = await loginpage.Login(username, password);
+            await Task.Delay(2000);
             Assert.That(await homePage.DoMojiOglasiExist(), Is.True, "User is not logged in");
 
             _extentTest.Info("Searching for audi a3");
-            await homePage.selectItemFromSearchResult("audi a3");
+            await homePage.searchAndselectItemFromSearchResult(SearchTerm);
 
             //do Assert for when search item is clicked
             Assert.That(await homePage.IsSearchResultDisplayed(), Is.True, "No search result displayed");

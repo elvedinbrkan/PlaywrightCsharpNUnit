@@ -489,3 +489,4 @@ C:\Users\ElvedinBrkan\source\repos\CrashCoursePlaywrightC#\CrashCoursePlaywright
 C:\Users\ElvedinBrkan\source\repos\CrashCoursePlaywrightC#\CrashCoursePlaywrightC#\obj\Debug\net8.0\PlaywrightC#NUnit.pdb
 C:\Users\ElvedinBrkan\source\repos\CrashCoursePlaywrightC#\CrashCoursePlaywrightC#\obj\Debug\net8.0\PlaywrightC#NUnit.genruntimeconfig.cache
 C:\Users\ElvedinBrkan\source\repos\CrashCoursePlaywrightC#\CrashCoursePlaywrightC#\obj\Debug\net8.0\ref\PlaywrightC#NUnit.dll
+C:\Users\ElvedinBrkan\source\repos\CrashCoursePlaywrightC#\CrashCoursePlaywrightC#\obj\Debug\net8.0\PlaywrightC#NUnit.sourcelink.json

@@ -18,17 +18,19 @@ namespace CrashCoursePlaywrightC_.Tests.SearchTestScenarios
         [Test]
         [Description("Verifying search result for unexistent item")]
         [Category("Negative")]
-        public async Task SearchItemTest_Failure()
+        [TestCase("123!45@67#abc")]
+        public async Task SearchTest_Failure(string unexistentItem)
         {
             LoginPage loginpage = new LoginPage(Page);
             await loginpage.ClickAcceptTermsbtn();
             Assert.That(await loginpage.IsOLXDisplayed(), Is.True, "OLX page is not displayed");
             await loginpage.ClickPrijaviSebtn();
             HomePage homePage = await loginpage.Login(username, password);
+            await Task.Delay(2000);
 
             Assert.That(await homePage.DoMojiOglasiExist(), Is.True, "User is not logged in");
             _extentTest.Info("Searching for 123!45@67#abc / nonexistent item");
-            await homePage.EnterSearchTerm("123!45@67#abc");
+            await homePage.EnterUnexistentSearchTerm(unexistentItem);
 
             var expectedTitle = "Nema rezultata za traženi pojam";
             Assert.That(await homePage.NoSearchResultTitle(), Is.EqualTo(expectedTitle), "Search results displayed unexpectedly?");
