@@ -18,7 +18,8 @@ namespace CrashCoursePlaywrightC_.Tests.ObjaviOglasTestScenarios
         [Test]
         [Description("Testing if user is able to successfully /Objaviti oglas/")]
         [Category("Positive")]
-        public async Task ObjaviAutomobilTest_Success()
+        [TestCase("Audi", "A3")]
+        public async Task ObjaviAutomobilTest_Success(string proizvodjac, string model)
         {
             LoginPage loginpage = new LoginPage(Page);
             await loginpage.ClickAcceptTermsbtn();
@@ -49,8 +50,8 @@ namespace CrashCoursePlaywrightC_.Tests.ObjaviOglasTestScenarios
 
             //Select Proizvodjac i model. (Audi a3)
             //await objaviautomobilpage.SelectProizvodjac_i_Model(); //send here values for proizvodjac i model? Use enums?
-            await objaviautomobilpage.SelectProizvodjac("Audi");
-            await objaviautomobilpage.SelectModel("A3");
+            await objaviautomobilpage.SelectProizvodjac(proizvodjac);
+            await objaviautomobilpage.SelectModel(model);
             _extentTest.Info("Selecting Proizvodjac i model");
 
             await objaviautomobilpage.SelectObavezneInformacije();
