@@ -60,10 +60,7 @@ namespace CrashCoursePlaywrightC_.Pages
 
         public async Task<bool> IsPageTitleVisible() => await IsWebElementVisible(PageTitleLbl);
 
-        public async Task<string> GetPageTitle()
-        {
-            return await PageTitleLbl.InnerTextAsync();
-        }
+        public async Task<string> GetPageTitle() => await PageTitleLbl.InnerTextAsync();
 
         public async Task SelectProizvodjac_i_Model()
         {
@@ -87,7 +84,7 @@ namespace CrashCoursePlaywrightC_.Pages
             //locating the element from dropdown based on input from test
         }
 
-        public async Task SelectObavezneInformacije() //receive values here such as model, godiste.. and use them in method
+        public async Task SelectObavezneInformacije() //receive values here such as model, godiste.. and use them in method?
         {
             await NaslovOglasaTxtbox.FillAsync("Audi A3 1.6 TDI REGISTROVAN BEZ ULAGANJA MAX UTEGNUT");
             await GodisteDropdown.ClickAsync();
@@ -161,9 +158,7 @@ namespace CrashCoursePlaywrightC_.Pages
 
         public async Task<bool> IsPoljeJeObaveznoLblVisible() => await IsWebElementVisible(PoljeJeObaveznoLbl);
 
-        public async Task<string> GetMandatoryErrorMsg()
-        {
-            return await PoljeJeObaveznoLbl.InnerTextAsync();
-        }
+        public async Task<string> GetMandatoryErrorMsg() => await PoljeJeObaveznoLbl.InnerTextAsync();
+       
     }
 }

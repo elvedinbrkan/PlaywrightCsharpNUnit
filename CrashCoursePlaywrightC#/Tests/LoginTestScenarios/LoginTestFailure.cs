@@ -21,7 +21,6 @@ namespace CrashCoursePlaywrightC_.Tests.LoginTestScenarios
         [Category("Negative")]
         public async Task LoginTest_InvalidPassword_Failure()
         {
-            //Running test using LoginPageUpgraded page class
             LoginPage loginpage = new LoginPage(Page);
             await loginpage.ClickAcceptTermsbtn();
             Assert.That(await loginpage.IsOLXDisplayed(), Is.True, "OLX page is not displayed");
@@ -43,7 +42,6 @@ namespace CrashCoursePlaywrightC_.Tests.LoginTestScenarios
         [Category("Negative")]
         public async Task LoginTest_InvalidUsername_Failure()
         {
-            //Running test using LoginPageUpgraded page class
             LoginPage loginpage = new LoginPage(Page);
             await loginpage.ClickAcceptTermsbtn();
             Assert.That(await loginpage.IsOLXDisplayed(), Is.True, "OLX page is not displayed");

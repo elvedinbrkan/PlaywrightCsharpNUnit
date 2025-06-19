@@ -66,7 +66,7 @@ namespace CrashCoursePlaywrightC_.Tests.ObjaviOglasTestScenarios
 
             //Assert validation error message is equal to expected error message
             var expectedErrorMsg = "Polje je obavezno";
-            Assert.That(await objaviautomobilpage.GetMandatoryErrorMsg(), Is.EqualTo(expectedErrorMsg), "Validation error message is not 'Polje je obavezno'.");
+            Assert.That(await objaviautomobilpage.GetMandatoryErrorMsg(), Is.EqualTo(expectedErrorMsg), "Validation error message is not 'Polje je obavezno' displayed.");
 
             await Page.WaitForTimeoutAsync(8000);
         }

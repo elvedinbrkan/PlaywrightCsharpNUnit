@@ -26,9 +26,7 @@ namespace CrashCoursePlaywrightC_.Pages
         private ILocator NoSearchResultsLbl => Page.GetByText("Nema rezultata za traženi pojam");
         private ILocator ObjaviOglasBtn => Page.Locator("//button[text()=\"Objavi oglas\"]");
         private ILocator ItemAutomobilBtn => Page.Locator(".item-Automobil");
-
         public async Task<bool> DoMojiOglasiExist() => await IsWebElementVisible(MojiOglasiBtn);
-
         public async Task ClickMojiOglasibtn() => await MojiOglasiBtn.ClickAsync();
 
         public async Task searchAndselectItemFromSearchResult(string searchItem)
