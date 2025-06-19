@@ -37,13 +37,5 @@ namespace CrashCoursePlaywrightC_.ExtentReportsDemo
             }
                 return _extent;  
         }
-        //[Test]
-        //public async Task Test()
-        //{
-        //    _test = _extent.CreateTest("Login test");
-        //    await Page.GotoAsync("https://olx.ba/");
-        //    _test.Pass("Navigated to olx.ba");
-        //}
-
     }
 }
